@@ -12,7 +12,6 @@ This repository contains a project focused on detecting fraudulent credit card t
 - [Results](#results)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
