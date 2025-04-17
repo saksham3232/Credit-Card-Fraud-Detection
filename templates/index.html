@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Card Fraud Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: green;
+        }
+
+        .result.fraud {
+            color: red;
+        }
+
+        .instructions {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Credit Card Fraud Detection</h2>
+        <p class="instructions">
+            Enter all 30 feature values (Time, V1-V28, Amount) as comma-separated values (CSV).<br>
+            Example: <code>360, -1.2, 2.4, ..., 1500</code>
+        </p>
+        <form method="POST" action="/predict">
+            <label for="features">Feature Input (comma-separated):</label>
+            <input type="text" name="features" id="features" required placeholder="Enter 30 comma-separated values...">
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if prediction %}
+            <div class="result {% if prediction == 'Fraudulent Transaction' %}fraud{% endif %}">
+                Prediction Result: {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
