@@ -78,6 +78,26 @@ To run this project locally, follow these steps:
 2. Follow the steps outlined in the notebook to preprocess the data, train models, and evaluate their performance.
 3. Modify the notebook as needed to experiment with different models or preprocessing techniques.
 
+# How to Run `app.py`
+
+1. **Install Dependencies**  
+   Ensure you have Python installed, and install the required dependencies by running:  
+   `pip install flask numpy`
+
+2. **Verify Model Files**  
+   Make sure the following files are present in the `models/` directory:  
+   - `scaler.pkl`  
+   - `model.pkl`
+
+3. **Run the Application**  
+   Start the Flask application by executing:  
+   `python app.py`
+
+4. **Access the Application**  
+   Open your browser and navigate to:  
+   [http://127.0.0.1:5000/](http://127.0.0.1:5000/)  
+   to interact with the application.
+
 ## Results
 
 The project achieves significant improvement in fraud detection through the use of advanced machine learning techniques. The key results include:
