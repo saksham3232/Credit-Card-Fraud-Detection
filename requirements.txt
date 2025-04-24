@@ -3,3 +3,6 @@ pandas
 scikit-learn
 seaborn
 matplotlib
+imblearn
+joblib
+Flask
